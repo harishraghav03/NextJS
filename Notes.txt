@@ -1,0 +1,16 @@
+Next.js is built on top of React.
+As React is a library, Next.js comes with its own router.
+
+It comes with a compiler for transforming and minifying JavaScript code.
+CLI - For building and starting apps.
+Node.js Runtime.
+
+Front end is bundled and then executed in the browser.
+Back end is executed inside the Node.js runtime.
+
+This Node.js runtime also allows us to render the content on the server and then transfer the content to the client - SSR.
+
+In this, we can pre-render certain pages that have static data when you build your application. 
+We just render them once and serve them whenever they are needed - Static Site Generation.
+
+npx create-next-app@latest
