@@ -1,16 +1,54 @@
-Next.js is built on top of React.
-As React is a library, Next.js comes with its own router.
+Next.js is built on top of React.  
+As React is a library, Next.js comes with its own router.  
 
-It comes with a compiler for transforming and minifying JavaScript code.
-CLI - For building and starting apps.
-Node.js Runtime.
+It comes with a compiler for transforming and minifying JavaScript code.  
+CLI - For building and starting apps.  
+Node.js runtime.  
 
-Front end is bundled and then executed in the browser.
-Back end is executed inside the Node.js runtime.
+The front end is bundled and then executed in the browser.  
+The back end is executed inside the Node.js runtime.  
 
-This Node.js runtime also allows us to render the content on the server and then transfer the content to the client - SSR.
+This Node.js runtime also allows us to render the content on the server and then transfer the content to the client - SSR.  
 
-In this, we can pre-render certain pages that have static data when you build your application. 
-We just render them once and serve them whenever they are needed - Static Site Generation.
+In this, we can pre-render certain pages that have static data when you build your application.  
+We just render them once and serve them whenever they are needed - Static Site Generation.  
 
-npx create-next-app@latest
+npx create-next-app@latest  
+
+We typically use the file name in lowercase as it is one of the conventions that Next.js looks for. The routing system in Next.js is based on convention, not configuration.  
+
+If we have any file other than the Page.tsx in the Users folder, the file will not be publicly accessible.
+
+Client-Side Rendering - Large Bundles, Resource-intensive, No SEO, Less Secure  
+Server-Side Rendering - Smaller Bundles, Resource-effective, SEO, Secure  
+
+In SSR, we lose interactivity.  
+Server components that are rendered on the server cannot listen to browser events (e.g., click, change, and submit, etc.).  
+They cannot access browser APIs, e.g., Local Storage.  
+They cannot maintain state or use useEffect.  
+
+There will be a slot where the server later injects the client component during server-side component rendering.  
+
+There are 2 ways we can fetch data: client-side and server-side.  
+
+Client-side - useState() + useEffect() or React Query.  
+Problems - Large bundles, resource-intensive, no SEO, less secure, and an extra round trip to the server.  
+
+Fetching the data in the server component has extra benefits such as caching:  
+- Memory  
+- File system  
+- Network  
+
+Coming down the list, the time to fetch data becomes slower.  
+For this reason, Next.js comes with a built-in cache. When we use the fetch function, Next.js automatically stores the data  
+in the data cache, which is based on the file system.  
+
+Static Rendering or Static Site Generation (Render at Build Time)
+If there are components with static data, Next.js can render them once during the build process for production.
+
+Dynamic Rendering (Render at Request Time)
+In development mode, the dynamic time will update to the latest time upon refreshing.
+However, in production, Next.js will treat it as a static file, and refreshing will not show the latest time.
+
+Reason? When we use the fetch function, Next.js caches the data (treating it as static and unchanging data). 
+But when we disable caching, it will treat the data as dynamic and render it accordingly.
