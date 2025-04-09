@@ -6,3 +6,5 @@ loading.tsx
 route.tsx
 not-found.tsx
 error.tsx
+
+If we want to make the Dynamic route optional, we wrap this with double square brackets
