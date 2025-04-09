@@ -1,0 +1,8 @@
+Special Files
+
+page.tsx
+layout.tsx
+loading.tsx
+route.tsx
+not-found.tsx
+error.tsx
