@@ -1,10 +1,14 @@
 Special Files
 
-page.tsx
-layout.tsx
-loading.tsx
-route.tsx
-not-found.tsx
-error.tsx
+page.tsx  
+layout.tsx  
+loading.tsx  
+route.tsx  
+not-found.tsx  
+error.tsx  
 
-If we want to make the Dynamic route optional, we wrap this with double square brackets
+To make a dynamic route optional, wrap it with double square brackets.
+
+For any click event on the client side, use state variables. Conversely, on the server side, use query parameters.
+
+If you need to access the URL or the query parameters, you can only access them in the Page file and then pass the data to other components via props.
