@@ -1,6 +1,6 @@
-import React from "react";
-import Hola from "./Hola";
+import React, { Suspense } from "react";
 import UsersTable from "./UsersTable";
+import Link from "next/link";
 
 interface Props {
   searchParams: { sortOrder: string };
@@ -12,9 +12,10 @@ const UsersPage = async ({ searchParams }: Props) => {
   return (
     <>
       <h1>Users</h1>
-      <p>{new Date().toLocaleTimeString()}</p>
-      <UsersTable sortOrder={sortOrder} />
-      <Hola />
+      <Link href="/users/new">New User</Link>
+      <Suspense fallback={<p>Loading...</p>}>
+        <UsersTable sortOrder={sortOrder} />
+      </Suspense>
     </>
   );
 };

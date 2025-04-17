@@ -14,3 +14,13 @@ For any click event on the client side, use state variables. Conversely, on the 
 If you need to access the URL or the query parameters, you can only access them in the Page file and then pass the data to other components via props.
 
 By default, when we use Tailwind, the elements are unstyled.
+
+<Link>: It only downloads content on the target page, pre-fetches links that are in the viewport, and caches pages on the client.
+
+Programmatic Navigation: Sometimes we need to take the user to a new page, such as when submitting a form or clicking a button.
+
+Streaming: As we get the loading page from the server, we might think there is no data shown, and it affects SEO. 
+However, this is the page that the client will initially see. The server does not close the connection (request-response lifecycle) 
+and will wait for the userTable content to render.
+
+To enable suspense for every page, implement it in the root file. Additionally, you can implement a loading file.
