@@ -12,3 +12,5 @@ To make a dynamic route optional, wrap it with double square brackets.
 For any click event on the client side, use state variables. Conversely, on the server side, use query parameters.
 
 If you need to access the URL or the query parameters, you can only access them in the Page file and then pass the data to other components via props.
+
+By default, when we use Tailwind, the elements are unstyled.
