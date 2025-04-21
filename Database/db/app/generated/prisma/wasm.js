@@ -117,7 +117,7 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.UserScalarFieldEnum = {
+exports.Prisma.UsersScalarFieldEnum = {
   id: 'id',
   email: 'email',
   name: 'name',
@@ -131,14 +131,14 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
-exports.Prisma.UserOrderByRelevanceFieldEnum = {
+exports.Prisma.UsersOrderByRelevanceFieldEnum = {
   email: 'email',
   name: 'name'
 };
 
 
 exports.Prisma.ModelName = {
-  User: 'User'
+  Users: 'Users'
 };
 
 /**

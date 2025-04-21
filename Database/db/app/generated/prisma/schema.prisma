@@ -17,7 +17,7 @@ datasource db {
 
 // Models are the way you define entities (real things) your app needs to store and work with.
 // Each Model can have only 1 ID field
-model User {
+model Users {
   id           Int      @id @default(autoincrement())
   email        String   @unique
   name         String
