@@ -1,6 +1,4 @@
-// Prisma automatically regenerates the PrismaClient (always in sync with the models) and the result will be cached
-
-import { PrismaClient } from "@prisma/client/extension";
+import { PrismaClient } from "../generated/prisma";
 
 const globalForPrisma = global as unknown as { prisma: PrismaClient };
 

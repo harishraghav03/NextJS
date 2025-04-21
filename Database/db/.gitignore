@@ -25,7 +25,7 @@
 *.pem
 
 # prisma
-/generated/prisma/
+app/generated/prisma
 
 # debug
 npm-debug.log*
