@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import schema from "./schema";
+import { error } from "console";
 
 export function GET(request: NextRequest) {
   return NextResponse.json([
@@ -12,11 +13,13 @@ export async function POST(request: NextRequest) {
   const body = await request.json();
 
   const validation = schema.safeParse(body);
-  console.log(validation.error?.errors);
   if (!validation.success)
     return NextResponse.json(
-      { errors: validation.error?.errors.map((err) => err.message) },
-      { status: 404 }
+      { errors: validation.error?.errors[0].message },
+      { status: 400 }
     );
-  return NextResponse.json({ id: 1, name: "Milk", price: 2 }, { status: 201 });
+  return NextResponse.json(
+    { id: 1, name: body.name, price: body.price },
+    { status: 201 }
+  );
 }

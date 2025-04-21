@@ -28,7 +28,7 @@ export async function PUT(
   // If not, return 404
   if (id > 10)
     return NextResponse.json(
-      { error: validation.error?.errors.message },
+      { error: validation.error?.errors[0].message },
       { status: 404 }
     );
   return NextResponse.json({ id: 1, name: body.name }, { status: 200 });
