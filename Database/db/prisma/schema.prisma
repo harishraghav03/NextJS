@@ -14,3 +14,14 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+// Models are the way you define entities (real things) your app needs to store and work with.
+// Each Model can have only 1 ID field
+model Users {
+  id           Int      @id @default(autoincrement())
+  email        String   @unique
+  name         String
+  followers    Int      @default(0)
+  isActive     Boolean  @default(true)
+  registeredAt DateTime @default(now())
+}
