@@ -3,11 +3,11 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: number } }
+  { params }: { params: { id: string } }
 ) {
   const { id } = await params;
   const user = await prisma.users.findUnique({
-    where: { id },
+    where: { id: parseInt(id) },
   });
 
   if (!user)
