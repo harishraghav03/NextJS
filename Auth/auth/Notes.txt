@@ -22,3 +22,5 @@ Later, when the user makes any request (like opening a page or using an API),
 To access the Auth session on the client, wrap the root layout with the SessionProvider component. This internally uses React Context to pass the session down the component tree.
 
 Middleware - We can run code before the request is completed (executed on every request).
+
+Database Adapter - NextAuth automatically stores the logged in data in the database
