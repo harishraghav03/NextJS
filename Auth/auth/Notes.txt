@@ -1,0 +1,22 @@
+OAuth (Open Authentication) is a way for users to log in to an app without giving their password directly to the app. It lets apps ask permission to use your account safely.
+
+NextAuth is a tool that helps you easily set up login systems in Next.js apps.
+When a user logs in, NextAuth creates a "session" to remember who the user is.
+This session is stored as a JWT (JSON Web Token) — think of it like a digital ID card.
+
+Cookies are tiny pieces of information that the browser stores and sends with every request to the server.
+The cookie carries the JWT (your digital ID card) with it whenever you interact with the app.
+
+Inside the JWT, it looks like a long messy string. But if you decode it (like unlocking a secret message), you’ll find normal readable information (like your name, email, etc.).
+It's encoded using a method called Base64, but NextAuth knows exactly how to decode and understand it.
+
+User clicks "Login" →
+Google Auth window opens →
+User logs in with Google →
+NextAuth receives confirmation from Google that the user is real →
+NextAuth creates a session (makes a JWT token for the user) →
+NextAuth sends the session token (JWT) to the browser and stores it in a cookie →
+Later, when the user makes any request (like opening a page or using an API),
+→ the browser automatically sends the session cookie (JWT) to the server.
+
+To access the Auth session on the client, wrap the root layout with the SessionProvider Component. This internally uses React Context to pass the session down the component tree.
