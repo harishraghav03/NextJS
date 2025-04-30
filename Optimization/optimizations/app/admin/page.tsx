@@ -7,7 +7,7 @@ const page = () => {
 
 export default page;
 
-// To dynamically render the title based on Eg Product
+// Function to dynamically generate metadata for the page
 
 export async function generateMetaData(): Promise<Metadata> {
   const product = await fetch("");
