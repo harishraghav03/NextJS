@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import GoogleAnalyticsHead from "./GoogleAnalyticsHead";
+import GoogleAnalyticsBody from "./GoogleAnalyticsBody";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,9 +26,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <GoogleAnalyticsHead />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <GoogleAnalyticsBody />
         {children}
       </body>
     </html>
