@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Roboto } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
+// import { Roboto } from "next/font/google";
 // import localFont from "next/font/local";
 import "./globals.css";
 import GoogleAnalyticsBody from "./components/GoogleAnalyticsBody";
@@ -15,10 +16,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-});
+// const roboto = Roboto({
+//   subsets: ["latin"],
+//   weight: ["400", "500"],
+// });
 
 // const poppins = localFont({
 //   src: "font_file",
