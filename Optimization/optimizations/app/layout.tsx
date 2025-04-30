@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Roboto } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
-import GoogleAnalyticsHead from "./GoogleAnalyticsHead";
 import GoogleAnalyticsBody from "./GoogleAnalyticsBody";
+import GoogleAnalyticsHead from "./GoogleAnalyticsHead";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,6 +14,17 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+});
+
+// const poppins = localFont({
+//   src: "font_file",
+//   variable: "--font--poppins",
+//   // Now after variable, there will be no font family, there will be custom font
+// });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -31,6 +43,7 @@ export default function RootLayout({
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        // className={poppins.variable}
       >
         <GoogleAnalyticsBody />
         {children}
